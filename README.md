@@ -1,5 +1,5 @@
 #AR-Lite
-Object Relational Mapping Inspired by Active Record
+Object Relational Mapping based on Active Record
 
 Uses Ruby to dynamically generate SQL queries via metaprogramming
 
@@ -9,7 +9,7 @@ Creates SQL Object Classes relating to database tables
 
 Creates custom classes and methods that translate queries to SQL and interact with the database using Ruby methods
 
-Extends SQL Object Class to allow Searching through "WHERE" clause
+Extends SQL Object Class to allow searches through "WHERE" clause
 
 Provides built‐in methods like .all() and .find() to models
 
