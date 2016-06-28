@@ -7,6 +7,7 @@ Uses Ruby to dynamically generate SQL queries via metaprogramming
 * Clone the repo
 * Open irb or pry
 * Run load './demo.rb'
+* Try associations/methods
 
 ##Libraries
 * SQLite3 (gem)
