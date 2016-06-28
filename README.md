@@ -3,14 +3,26 @@ Object Relational Mapping based on Active Record
 
 Uses Ruby to dynamically generate SQL queries via metaprogramming
 
-##Features
+## Demo
+* Clone the repo
+* Open irb or pry
+* Run load './demo.rb'
 
-Creates SQL Object Classes relating to database tables
+##Libraries
+* SQLite3 (gem)
+* ActiveSupport::Inflector
 
-Creates custom classes and methods that translate queries to SQL and interact with the database using Ruby methods
+##Core ActiveRecord Associations
 
-Extends SQL Object Class to allow searches through "WHERE" clause
+* belongs_to
+* has_many
+* has_one_through
 
-Provides built‐in methods like .all() and .find() to models
-
-Object-relational mapping with support for single and multiple step associations
+##Core ActiveRecord Methods
+* .all()
+* .find()
+* .where()
+* insert
+* update
+* save
+* destroy

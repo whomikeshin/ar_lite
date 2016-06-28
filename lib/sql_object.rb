@@ -3,16 +3,14 @@ require 'active_support/inflector'
 
 class SQLObject
   def self.columns
-    @query ||= DBConnection.execute2(<<-SQL)
+    @columns ||= DBConnection.execute2(<<-SQL)
       SELECT
         *
       FROM
         "#{self.table_name}"
     SQL
 
-    columns = []
-    @query.first.each { |column| columns << column.to_sym }
-    columns
+    @columns.map!(&:to_sym)
   end
 
   def self.finalize!
@@ -42,13 +40,12 @@ class SQLObject
       FROM
         "#{self.table_name}"
     SQL
-    self.parse_all(results)
+
+    parse_all(results)
   end
 
   def self.parse_all(results)
-    results.map do |result|
-      self.new(result)
-    end
+    results.map { |result| self.new(result) }
   end
 
   def self.find(id)
@@ -60,6 +57,8 @@ class SQLObject
       WHERE
         "#table_name}".id = ?
     SQL
+
+    parse_all(results).first
   end
 
   def initialize(params = {})
@@ -107,5 +106,14 @@ class SQLObject
 
   def save
     self.id.nil? ? insert : update
+  end
+
+  def destroy
+    DBConnection.execute(<<-SQL, self.attributes[:id])
+      DELETE FROM
+        #{self.class.table_name}
+      WHERE
+        id = ?
+    SQL
   end
 end

@@ -28,16 +28,16 @@ VALUES
 INSERT INTO
   humans (id, fname, lname, house_id)
 VALUES
-  (1, "Devon", "Watts", 1),
-  (2, "Matt", "Rubens", 1),
-  (3, "Ned", "Ruggeri", 2),
-  (4, "Catless", "Human", NULL);
+  (1, "Bruce", "Wayne", 1),
+  (2, "Barry", "Allen", 1),
+  (3, "Clark", "Kent", 2),
+  (4, "Torch", "Human", NULL);
 
 INSERT INTO
   cats (id, name, owner_id)
 VALUES
-  (1, "Breakfast", 1),
-  (2, "Earl", 2),
-  (3, "Haskell", 3),
-  (4, "Markov", 3),
-  (5, "Stray Cat", NULL);
+  (1, "Durantula", 1),
+  (2, "Linsanity", 2),
+  (3, "LeBron", 3),
+  (4, "Shaq", 3),
+  (5, "His Airness", NULL);
