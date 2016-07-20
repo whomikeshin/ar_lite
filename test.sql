@@ -6,7 +6,7 @@ CREATE TABLE cats (
   FOREIGN KEY(owner_id) REFERENCES human(id)
 );
 
-CREATE TABLE humans (
+CREATE TABLE superhumans (
   id INTEGER PRIMARY KEY,
   fname VARCHAR(255) NOT NULL,
   lname VARCHAR(255) NOT NULL,
@@ -23,10 +23,13 @@ CREATE TABLE houses (
 INSERT INTO
   houses (id, address)
 VALUES
-  (1, "26th and Guerrero"), (2, "Dolores and Market");
+  (1, "Batcave, Gotman City"),
+  (2, "West House, Century City"),
+  (3, "Fortress of Solitude, Arctic"),
+  (4, "Edwards Air Force Base, Coast City");
 
 INSERT INTO
-  humans (id, fname, lname, house_id)
+  superhumans (id, fname, lname, house_id)
 VALUES
   (1, "Bruce", "Wayne", 1),
   (2, "Barry", "Allen", 1),
