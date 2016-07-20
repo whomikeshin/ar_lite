@@ -31,13 +31,13 @@ VALUES
   (1, "Bruce", "Wayne", 1),
   (2, "Barry", "Allen", 1),
   (3, "Clark", "Kent", 2),
-  (4, "Torch", "Human", NULL);
+  (4, "Hal", "Jordan", NULL);
 
 INSERT INTO
   cats (id, name, owner_id)
 VALUES
-  (1, "Durantula", 1),
-  (2, "Linsanity", 2),
-  (3, "LeBron", 3),
-  (4, "Shaq", 3),
-  (5, "His Airness", NULL);
+  (1, "King James", 1),
+  (2, "Uncle Drew", 2),
+  (3, "Durantula", 3),
+  (4, "Chef Curry", 3),
+  (5, "Boogie", NULL);

@@ -1,29 +1,32 @@
 #AR-Lite
-Object Relational Mapping based on Active Record
+AR-Lite is a lightweight ORM, based on ActiveRecord, that translates between Ruby objects and SQL queries.
 
-Uses Ruby to dynamically generate SQL queries via metaprogramming
+##How to Use
+* Clone the repo and include lib in your rails db folder
+* Update the db and sql files with a sqlite3 db in db_connection.rb
+* Create new model, inherit from SQLObject, and invoke finalize!
 
-## Demo
-* Clone the repo
-* Open irb or pry
-* Run load './demo.rb'
-* Try associations/methods
+```
+require 'sql_object'
 
-##Libraries
-* SQLite3 (gem)
-* ActiveSupport::Inflector
+class Model < SQLObject
+  Model.finalize!
+  ...
+end
+```
 
-##Core ActiveRecord Associations
+* Use core methods to make appropriate queries
 
-* belongs_to
-* has_many
-* has_one_through
+##Core Methods
+* ::all
+* ::find
+* ::where
+* #insert
+* #update
+* #save
+* #destroy
 
-##Core ActiveRecord Methods
-* .all()
-* .find()
-* .where()
-* insert
-* update
-* save
-* destroy
+##Associations
+* belongs_to(name, options)
+* has_many(name, options)
+* has_one_through(name, through_name, source_name)
