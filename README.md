@@ -1,5 +1,5 @@
 #AR-Lite
-AR-Lite is a lightweight ORM, based on ActiveRecord, that interchanges SQL queries and Ruby objects
+AR-Lite is a lightweight ORM, based on ActiveRecord, that converts between Ruby objects and SQL queries
 
 ##How to Use
 * Clone/download the repo and include lib in rails db folder
@@ -32,6 +32,7 @@ end
 * `destroy` - deletes row from table corresponding to primary key
 
 ##Associations
+Sets up connection that will fetch a single associated record
 * belongs_to(name, options)
 * has_many(name, options)
 * has_one_through(name, through_name, source_name)
