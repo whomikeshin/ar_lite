@@ -8,7 +8,7 @@ Armor is a lightweight ORM, based on ActiveRecord, that links Ruby objects and S
 * Update `CATS_DB_FILE` and `CATS_SQL_FILE` in db_connection.rb to correct file paths.
 * Create new model, inherit from SQLObject class, and invoke finalize!
 
-```
+```ruby
 require 'sql_object'
 
 class Villian < SQLObject
@@ -51,7 +51,7 @@ end
 
 * `has_many(name, options)` - sets up connection that will return associated objects
 
-```ruby 
+```ruby
 def has_many(name, options = {})
   assoc_options[name] = HasManyOptions.new(name, self.name, options)
 
