@@ -83,7 +83,7 @@ class SQLObject
   def insert
     col_num = self.class.columns.length - 1
     col_names = self.class.columns[1..-1].join(", ")
-    question_marks = (["?"] * num).join(", ")
+    question_marks = (["?"] * col_num).join(", ")
 
     DBConnection.execute(<<-SQL, *attribute_values[1..-1])
       INSERT INTO
