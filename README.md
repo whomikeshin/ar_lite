@@ -21,12 +21,12 @@ end
 * Use methods to make necessary queries or associations.
 
 ##Core Methods
-* `all` - returns an array of objects for each row in database
-* `find(id)` - returns a SQLObject corresponding to primary key
-* `where(params)` - takes a params hash as argument and returns an array of objects that match specified params
+* `all` - returns an array of all records in database
+* `find(id)` - returns a single record corresponding to primary key
+* `where(params)` - takes a params hash as argument and returns an array of records that match specified params
 
-```
-Cat.where( {name: 'Alfred'} ) #=> Cat name 'King James'
+```ruby
+Cat.where(name: 'Catman') => [#<Cat:0x007f8379ced188 @attributes={:id=>1, :name=>"Catman", :owner_id=>1}>]
 ```
 
 * `insert` - insert new row in into table that represents object and assigns id
@@ -37,7 +37,7 @@ Cat.where( {name: 'Alfred'} ) #=> Cat name 'King James'
 ##Associations
 * `belongs_to(name, options)` - sets up connection that will return a single associated object
 
-```
+```ruby
 def belongs_to(name, options = {})
   assoc_options[name] = BelongsToOptions.new(name, options)
 
@@ -51,7 +51,7 @@ end
 
 * `has_many(name, options)` - sets up connection that will return associated objects
 
-```
+```ruby 
 def has_many(name, options = {})
   assoc_options[name] = HasManyOptions.new(name, self.name, options)
 
