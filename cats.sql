@@ -23,24 +23,25 @@ CREATE TABLE houses (
 INSERT INTO
   houses (id, address)
 VALUES
-  (1, "Batcave, Gotman City"),
+  (1, "Wayne Manor, Gotman City"),
   (2, "West House, Century City"),
-  (3, "Fortress of Solitude, Arctic"),
-  (4, "Edwards Air Force Base, Coast City");
+  (3, "Daily Planet, Metropolis"),
+  (4, "Atlantean Royal Palace, Atlantis");
 
 INSERT INTO
   superheroes (id, fname, lname, house_id)
 VALUES
   (1, "Bruce", "Wayne", 1),
-  (2, "Barry", "Allen", 1),
-  (3, "Clark", "Kent", 2),
-  (4, "Hal", "Jordan", NULL);
+  (2, "Barry", "Allen", 2),
+  (3, "Clark", "Kent", 3),
+  (4, "Diana", "Prince", NULL),
+  (5, "Arthur", "Curry", 5);
 
 INSERT INTO
   cats (id, name, owner_id)
 VALUES
-  (1, "King James", 1),
-  (2, "Uncle Drew", 2),
-  (3, "Durantula", 3),
-  (4, "Chef Curry", 3),
-  (5, "Boogie", NULL);
+  (1, "Catman", 1),
+  (2, "Supercat", 3),
+  (3, "Kat-El", 3),
+  (4, "Wondercat", 5),
+  (5, "Aquacat", NULL);

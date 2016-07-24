@@ -1,6 +1,5 @@
 require_relative 'lib/associatable'
 
-
 class Cat < SQLObject
   self.table_name = "cats"
 
