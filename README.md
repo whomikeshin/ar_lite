@@ -1,5 +1,5 @@
-#ARQ
-ARQ is a lightweight ORM, based on ActiveRecord, that translates between Ruby objects and SQL records using modules and inheritance.
+#ARMOR
+Armor is a lightweight ORM, based on ActiveRecord, that translates between Ruby objects and SQL records using modules and inheritance.
 
 ##How to Use
 * Use SQLite database and install `sqlite3` gem.
