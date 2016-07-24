@@ -1,16 +1,17 @@
 require_relative 'lib/associatable'
 
+
 class Cat < SQLObject
   self.table_name = "cats"
 
-  belongs_to :human, foreign_key: :owner_id
-  has_one_through :house, :human, :house
+  belongs_to :superhero, foreign_key: :owner_id
+  has_one_through :house, :superhero, :house
 
   self.finalize!
 end
 
-class Human < SQLObject
-  self.table_name = "humans"
+class Superhero < SQLObject
+  self.table_name = "superheroes"
 
   has_many :cats, foreign_key: :owner_id
   belongs_to :house
@@ -19,8 +20,8 @@ class Human < SQLObject
 end
 
 class House < SQLObject
-  has_many :humans,
-    class_name: "Humans",
+  has_many :superheroes,
+    class_name: "Superheroes",
     foreign_key: :house_id,
     primary_key: :id
 
