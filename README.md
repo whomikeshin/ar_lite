@@ -68,29 +68,32 @@ end
 ##Demo
 * Clone the repo
 * Navigate to `irb` or `pry`
-* `load 'demo.rb'` in command line
-* Enter `a = Cat.find(1)`
-* Test associations
-* Create new cat
-
 ```ruby
 [1] pry(main)> load 'demo.rb'
 => true
-[2] pry(main)> Cat.all
-=> [#<Cat:0x007f97fa44d100 @attributes={:id=>1, :name=>"Catman", :owner_id=>1}>,
- #<Cat:0x007f97fa44cf98 @attributes={:id=>2, :name=>"Supercat", :owner_id=>3}>,
- #<Cat:0x007f97fa44ccc8 @attributes={:id=>3, :name=>"Kat-El", :owner_id=>3}>,
- #<Cat:0x007f97fa44ca98 @attributes={:id=>4, :name=>"Wondercat", :owner_id=>5}>,
- #<Cat:0x007f97fa44c818 @attributes={:id=>5, :name=>"Aquacat", :owner_id=>nil}>]
-[3] pry(main)> a = Cat.find(1)
+```
+* Try `a = Cat.find(1)`
+* Test associations
+
+```ruby
+[2] pry(main)> a = Cat.find(1)
 => #<Cat:0x007f97fc942988 @attributes={:id=>1, :name=>"Catman", :owner_id=>1}>
-[4] pry(main)> a.superhero
+[3] pry(main)> a.superhero
 => #<Superhero:0x007f97fcfacfd0
  @attributes={:id=>1, :fname=>"Bruce", :lname=>"Wayne", :house_id=>1}>
-[5] pry(main)> a.house
+[4] pry(main)> a.house
 => #<House:0x007f97fce791b8 @attributes={:id=>1, :address=>"Wayne Manor, Gotman City"}>
-[6] pry(main)> b = Cat.new(name: "Fastcat", owner_id: 2)
+```
+* Create a new Cat
+
+```ruby
+[5] pry(main)> b = Cat.new(name: "Fastcat", owner_id: 2)
 => #<Cat:0x007f97fcd4f148 @attributes={:name=>"Fastcat", :owner_id=>2}>
-[7] pry(main)> b.save
+[6] pry(main)> b.save
 => 6
+[7] pry(main)> c = Superhero.find(2)
+=> #<Superhero:0x007fe0dce3e170
+ @attributes={:id=>2, :fname=>"Barry", :lname=>"Allen", :house_id=>2}>
+[8] pry(main)> c.cats
+=> [#<Cat:0x007fe0dcc81148 @attributes={:id=>6, :name=>"Fastcat", :owner_id=>2}>]
 ```
