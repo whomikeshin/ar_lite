@@ -5,8 +5,9 @@ Armor is a lightweight ORM, based on ActiveRecord, that links Ruby objects and S
 * Use SQLite database for project.
 * Install `sqlite3` gem.
 * Clone the repo and include lib in rails db folder.
-* Update `CATS_DB_FILE` and `CATS_SQL_FILE` in db_connection.rb to correct file paths.
+* Update `CATS_DB_FILE` and `CATS_SQL_FILE` in db_connection.rb with correct file paths.
 * Create new model, inherit from SQLObject class, and invoke finalize!
+* Use methods to make necessary queries or associations.
 
 ```ruby
 require 'sql_object'
@@ -17,8 +18,6 @@ class Villian < SQLObject
   ...
 end
 ```
-
-* Use methods to make necessary queries or associations.
 
 ##Core Methods
 * `all` - returns an array of all records in database
@@ -35,7 +34,7 @@ Cat.where(name: 'Catman') => [#<Cat:0x007f8379ced188 @attributes={:id=>1, :name=
 * `destroy` - deletes object's row from table corresponding to primary key
 
 ##Associations
-* `belongs_to(name, options)` - sets up connection that will return a single associated object
+* `belongs_to(name, options)` - sets up one-to-one connection that will return a single associated object
 
 ```ruby
 def belongs_to(name, options = {})
@@ -49,7 +48,7 @@ def belongs_to(name, options = {})
 end
 ```
 
-* `has_many(name, options)` - sets up connection that will return associated objects
+* `has_many(name, options)` - sets up one-to-many connection that will return associated objects when
 
 ```ruby
 def has_many(name, options = {})
@@ -63,7 +62,7 @@ def has_many(name, options = {})
 end
 ```
 
-* `has_one_through(name, through_name, source_name)` - sets up connection through other tables that will return associated object
+* `has_one_through(name, through_name, source_name)` - sets up one-too-one connection through another model that will return associated object
 
 ##Demo
 * Clone the repo
@@ -85,6 +84,7 @@ end
 => #<House:0x007f97fce791b8 @attributes={:id=>1, :address=>"Wayne Manor, Gotman City"}>
 ```
 * Create a new Cat
+* Set attributes and save
 
 ```ruby
 [5] pry(main)> b = Cat.new(name: "Fastcat", owner_id: 2)

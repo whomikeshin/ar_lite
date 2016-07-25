@@ -12,7 +12,11 @@ end
 class Superhero < SQLObject
   self.table_name = "superheroes"
 
-  has_many :cats, foreign_key: :owner_id
+  has_many :cats,
+    class_name: "Cats",
+    foreign_key: :owner_id,
+    primary_key: :id
+
   belongs_to :house
 
   self.finalize!
