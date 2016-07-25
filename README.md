@@ -62,7 +62,7 @@ def has_many(name, options = {})
 end
 ```
 
-* `has_one_through(name, through_name, source_name)` - sets up one-too-one connection through another model (`through_name`) that will return associated object
+* `has_one_through(name, through_name, source_name)` - sets up one-to-one connection through another model that will return associated object
 
 ##Demo
 * Clone the repo
