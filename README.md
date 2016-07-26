@@ -4,7 +4,7 @@ Armor is a lightweight ORM, based on ActiveRecord, that links Ruby objects and S
 ##How to Use
 * Use SQLite database for project.
 * Clone the repo and include lib in rails db folder.
-* Run `bundle install` in console.
+* Run `bundle install`.
 * Update `CATS_DB_FILE` and `CATS_SQL_FILE` in db_connection.rb with correct file paths.
 * Create new model, inherit from SQLObject class, and invoke finalize!
 * Use methods to make necessary queries or associations.
